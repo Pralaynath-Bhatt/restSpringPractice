@@ -30,15 +30,16 @@ public class restController {
     }
 
     @PostMapping("/employees")
-    public Employee addEmployee(Employee employee){
+    public Employee addEmployee(@RequestBody Employee employee){
+        employee.setId(0);
         Employee employee1= employeeService.save(employee);
         return employee1;
     }
 
-    @PatchMapping("/employees")
-    public Employee updateEmployee(Employee employee){
-        Employee employee1= employeeService.save(employee);
-        return employee1;
+    @PutMapping("/employees")
+    public Employee updateEmployee(@RequestBody Employee employee){
+        Employee employee2= employeeService.save(employee);
+        return employee2;
     }
     @DeleteMapping("/employees/{id}")
         public void deleteEmployee(@PathVariable int id){
