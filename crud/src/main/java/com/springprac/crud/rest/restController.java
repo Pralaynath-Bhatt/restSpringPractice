@@ -24,12 +24,24 @@ public class restController {
 
     @GetMapping("/employees/{id}")
     public Employee findEmployee(@PathVariable int id){
-        return employeeService.findEmployee(id);
+        Employee theEmployee= employeeService.findEmployee(id);
+        if (theEmployee==null) throw new RuntimeException("Employee ID not found - "+id);
+        return theEmployee;
     }
 
-    @PostMapping("/employess")
-    public Employee addEmployee(){
+    @PostMapping("/employees")
+    public Employee addEmployee(Employee employee){
+        Employee employee1= employeeService.save(employee);
+        return employee1;
+    }
 
-        return null;
+    @PatchMapping("/employees")
+    public Employee updateEmployee(Employee employee){
+        Employee employee1= employeeService.save(employee);
+        return employee1;
+    }
+    @DeleteMapping("/employees/{id}")
+        public void deleteEmployee(@PathVariable int id){
+            employeeService.delete(id);
     }
 }
