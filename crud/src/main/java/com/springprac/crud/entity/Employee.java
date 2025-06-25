@@ -5,10 +5,6 @@ import lombok.*;
 
 @Entity
 @Table(name = "employee")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 @Builder
 public class Employee {
     @Id
@@ -21,6 +17,25 @@ public class Employee {
     private String lastName;
     @Column(name = "email")
     private String email;
+
+    public Employee() {
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public Employee(String firstName, String lastName, String email) {
         this.firstName = firstName;

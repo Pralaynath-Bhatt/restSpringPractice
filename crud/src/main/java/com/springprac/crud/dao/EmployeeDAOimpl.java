@@ -5,9 +5,10 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+@Repository
 public class EmployeeDAOimpl implements EmployeeDAO {
     private EntityManager entityManager;
     @Autowired
@@ -16,7 +17,7 @@ public class EmployeeDAOimpl implements EmployeeDAO {
     }
 
     @Override
-    public List<Employee> getEmployees() {
+    public List<Employee> findAll() {
         TypedQuery<Employee> get = entityManager.createQuery("From employee",Employee.class);
         List<Employee> employees = get.getResultList();
 
@@ -25,7 +26,7 @@ public class EmployeeDAOimpl implements EmployeeDAO {
     }
 
     @Override
-    public Employee getEmployee(Integer identity) {
+    public Employee findEmployee(Integer identity) {
         Employee employee =entityManager.find(Employee.class,identity);
         return employee;
     }
