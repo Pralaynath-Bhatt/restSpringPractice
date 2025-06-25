@@ -1,13 +1,9 @@
 package com.springprac.crud.rest;
 
-import com.springprac.crud.dao.EmployeeDAO;
-import com.springprac.crud.dao.EmployeeDAOimpl;
 import com.springprac.crud.entity.Employee;
 import com.springprac.crud.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,5 +20,16 @@ public class restController {
     @GetMapping("/employees")
     public List<Employee> findAll(){
         return employeeService.findAll();
+    }
+
+    @GetMapping("/employees/{id}")
+    public Employee findEmployee(@PathVariable int id){
+        return employeeService.findEmployee(id);
+    }
+
+    @PostMapping("/employess")
+    public Employee addEmployee(){
+
+        return null;
     }
 }
