@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -24,7 +25,7 @@ public class restController {
 
     @GetMapping("/employees/{id}")
     public Employee findEmployee(@PathVariable int id){
-        Employee theEmployee= employeeService.findEmployee(id);
+        Employee theEmployee= employeeService.findById(id);
         if (theEmployee==null) throw new RuntimeException("Employee ID not found - "+id);
         return theEmployee;
     }
