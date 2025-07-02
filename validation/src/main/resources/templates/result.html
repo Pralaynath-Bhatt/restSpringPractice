@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>result</title>
+    <style>
+        .error{color:red;}
+    </style>
+</head>
+<body>
+
+Welcome to customer registration form
+<br><br>
+wecome dear <p th:text="${customer.firstName} + ' '+ ${customer.lastName}"></p>
+</body>
+</html>
