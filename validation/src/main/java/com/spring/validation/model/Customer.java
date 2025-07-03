@@ -6,13 +6,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 public class Customer {
-    private String firstName;
-    @NotNull(message = "is required")
-    @Size(min = 1, message = "is required")
-    private String lastName;
-    @Min(value = 0,message = "Must be Greater than or equal to 0")
-    @Max(value = 10, message = "Must be less than or equal to 10")
-    private int freePass;
+
     private String firstName;
     @NotNull(message = "is required")
     @Size(min = 1, message = "is required")
