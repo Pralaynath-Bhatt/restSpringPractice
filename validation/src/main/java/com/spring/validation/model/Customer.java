@@ -1,13 +1,24 @@
 package com.spring.validation.model;
 
+import com.spring.validation.validator.CourseValidator;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 public class Customer {
-
+    @CourseValidator(value = "LUV", message = "it should start by LUV")
+    private String courseCode;
     private String firstName;
+
+    public String getCourseCode() {
+        return courseCode;
+    }
+
+    public void setCourseCode(String courseCode) {
+        this.courseCode = courseCode;
+    }
+
     @NotNull(message = "is required")
     @Size(min = 1, message = "is required")
     private String lastName;
