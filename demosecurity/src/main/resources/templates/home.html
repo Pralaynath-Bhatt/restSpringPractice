@@ -6,19 +6,24 @@
     <title>home</title>
 </head>
 <body>
-<H1>Weclome to my home page</H1>
+<H1>Welcome to my home page</H1>
 <hr>
+
 <p>user <span sec:authentication="principal.username"/></p>
 <br>
 Role <span sec:authentication="principal.authorities"/>
 <br>
-<a th:href="@{employee}"> go to employee page</a>
-<br>
-
-<a th:href="@{manager}"> go to manager page</a>
-<br>
-<a th:href="@{admin}"> go to admin page</a>
-<br>
+<hr>
+<div sec:authorize="hasRole('EMPLOYEE')">
+    <a th:href="@{employee}"> go to employee page</a>
+</div>
+<div sec:authorize="hasRole('MANAGER')">
+    <a th:href="@{manager}"> go to manager page</a>
+</div>
+<div sec:authorize="hasRole('ADMIN')">
+    <a th:href="@{admin}"> go to admin page</a>
+</div>
+<HR>
 
 <h2> Do visit again</h2>
 <form action="#" th:action="@{/logout}" method="post">
