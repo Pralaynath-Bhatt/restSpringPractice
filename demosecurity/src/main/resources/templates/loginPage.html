@@ -3,10 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <style>
+        .fail{
+        color:red;
+        }
+    </style>
 </head>
 <body>
 <h3>my Custom login page</h3>
+
+<!-- error page-->
+
+
 <form action="#" th:action="@{/authenticateTheUser}" method="post">
+    <div th:if="${param.error}" class="fail">
+        sorry Invalid ID or Password
+    </div>
     <br>
     User Name
     <input type="text" name="username"/>

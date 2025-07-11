@@ -11,7 +11,7 @@ public class DemoController {
 }
 @GetMapping("/showLoginPage")
     public  String showMyLoginPage(){
-    return "loginPage";
+    return "fancy-login";
 }
 
 
