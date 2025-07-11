@@ -6,7 +6,7 @@
     <title>home</title>
 </head>
 <body>
-<H1>Weclome to my home page</H1>
+<H1>Weclome to my Employee page</H1>
 <hr>
 <p>user <span sec:authentication="principal.username"/></p>
 <br>
@@ -19,7 +19,6 @@ Role <span sec:authentication="principal.authorities"/>
 <br>
 <a th:href="@{admin}"> go to admin page</a>
 <br>
-
 <h2> Do visit again</h2>
 <form action="#" th:action="@{/logout}" method="post">
     <input type="submit" value="logout">

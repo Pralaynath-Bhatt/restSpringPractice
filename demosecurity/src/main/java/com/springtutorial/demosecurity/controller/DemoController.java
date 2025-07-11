@@ -9,10 +9,25 @@ public class DemoController {
     public String Home(){
     return "home";
 }
+    @GetMapping("/employee")
+    public String Employee(){
+        return "employee";
+    }
+    @GetMapping("/manager")
+    public String Employ(){
+        return "manager";
+    }
+    @GetMapping("/admin")
+    public String Employer(){
+        return "admin";
+    }
 @GetMapping("/showLoginPage")
     public  String showMyLoginPage(){
     return "fancy-login";
 }
 
-
+    @GetMapping("/access-Denied")
+    public  String showAccessDeniedPage(){
+        return "access-Denied";
+    }
 }

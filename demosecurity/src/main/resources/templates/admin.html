@@ -6,21 +6,21 @@
     <title>home</title>
 </head>
 <body>
-<H1>Weclome to my home page</H1>
+<H1>Welcome to my admin page</H1>
 <hr>
 <p>user <span sec:authentication="principal.username"/></p>
 <br>
 Role <span sec:authentication="principal.authorities"/>
-<br>
-<a th:href="@{employee}"> go to employee page</a>
-<br>
-
-<a th:href="@{manager}"> go to manager page</a>
-<br>
-<a th:href="@{admin}"> go to admin page</a>
-<br>
 
 <h2> Do visit again</h2>
+<br>
+<a th:href="@{/employee}"> go to employee page</a>
+<br>
+
+<a th:href="@{/manager}"> go to manager page</a>
+<br>
+<a th:href="@{/admin}"> go to admin page</a>
+<br>
 <form action="#" th:action="@{/logout}" method="post">
     <input type="submit" value="logout">
 </form>
