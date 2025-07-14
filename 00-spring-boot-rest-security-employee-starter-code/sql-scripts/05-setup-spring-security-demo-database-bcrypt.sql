@@ -26,9 +26,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` 
 VALUES 
-('john','{bcrypt}$2a$10$qeS0HEh7urweMojsnwNAR.vcXJeXR1UcMRZ2WcGQl9YeuspUdgF.q',1),
-('mary','{bcrypt}$2a$10$qeS0HEh7urweMojsnwNAR.vcXJeXR1UcMRZ2WcGQl9YeuspUdgF.q',1),
-('susan','{bcrypt}$2a$10$qeS0HEh7urweMojsnwNAR.vcXJeXR1UcMRZ2WcGQl9YeuspUdgF.q',1);
+('raj','{bcrypt}$2a$10$qeS0HEh7urweMojsnwNAR.vcXJeXR1UcMRZ2WcGQl9YeuspUdgF.q',1),
+('rakshi','{bcrypt}$2a$10$qeS0HEh7urweMojsnwNAR.vcXJeXR1UcMRZ2WcGQl9YeuspUdgF.q',1),
+('sonia','{bcrypt}$2a$10$qeS0HEh7urweMojsnwNAR.vcXJeXR1UcMRZ2WcGQl9YeuspUdgF.q',1);
 
 
 --
@@ -48,9 +48,9 @@ CREATE TABLE `authorities` (
 
 INSERT INTO `authorities` 
 VALUES 
-('john','ROLE_EMPLOYEE'),
-('mary','ROLE_EMPLOYEE'),
-('mary','ROLE_MANAGER'),
-('susan','ROLE_EMPLOYEE'),
-('susan','ROLE_MANAGER'),
-('susan','ROLE_ADMIN');
+('raj','ROLE_EMPLOYEE'),
+('rakshi','ROLE_EMPLOYEE'),
+('rakshi','ROLE_MANAGER'),
+('sonia','ROLE_EMPLOYEE'),
+('sonia','ROLE_MANAGER'),
+('sonia','ROLE_ADMIN');
