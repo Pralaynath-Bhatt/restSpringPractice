@@ -21,7 +21,7 @@ public class CrudDemoApplication {
 	public CommandLineRunner commandLineRunner(AppDAO theAppDAO){
 		return runner->{
 //			createNewInstructor(theAppDAO);
-//			findById(1,theAppDAO);
+			findInstructorDetailById(2,theAppDAO);
 //			deleteById(3,theAppDAO);
 		};
 	}
@@ -48,5 +48,10 @@ public class CrudDemoApplication {
 		System.out.println(instructor.toString());
 	}
 
+	private void findInstructorDetailById(int id,AppDAO appDAO) {
+		InstructorDetail instructorDetail = appDAO.findInstructorDetailById(id);
+		System.out.println(instructorDetail);
+		System.out.println(instructorDetail.getInstructor());
+	}
 
 }

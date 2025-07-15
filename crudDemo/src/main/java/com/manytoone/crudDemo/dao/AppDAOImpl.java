@@ -1,6 +1,7 @@
 package com.manytoone.crudDemo.dao;
 
 import com.manytoone.crudDemo.entity.Instructor;
+import com.manytoone.crudDemo.entity.InstructorDetail;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.transaction.Transactional;
@@ -34,5 +35,10 @@ public class AppDAOImpl implements AppDAO{
         Instructor instructor =findById(id);
 
         entityManager.remove(instructor);
+    }
+
+    @Override
+    public InstructorDetail findInstructorDetailById(int id) {
+        return entityManager.find(InstructorDetail.class,id);
     }
 }

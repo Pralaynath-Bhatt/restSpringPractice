@@ -5,6 +5,17 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "instructor_detail")
 public class InstructorDetail {
+    @OneToOne(mappedBy = "instructorDetail",cascade = CascadeType.ALL)
+    private Instructor instructor;
+
+    public Instructor getInstructor() {
+        return instructor;
+    }
+
+    public void setInstructor(Instructor instructor) {
+        this.instructor = instructor;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
