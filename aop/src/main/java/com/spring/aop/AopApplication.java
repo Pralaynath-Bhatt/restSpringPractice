@@ -21,7 +21,7 @@ public class AopApplication {
 
 	private void addAccountDemo(AccountDAO accountDAO) {
 		System.out.println(getClass() + " Inside Main");
-		accountDAO.addAccount();
+		accountDAO.addAccount(true);
 
 	}
 }
