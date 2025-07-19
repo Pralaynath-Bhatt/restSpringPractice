@@ -1,5 +1,6 @@
 package com.spring.aop.aspect;
 
+import com.spring.aop.entity.Account;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -25,6 +26,11 @@ public class MySecurityRecord {
 
         for(Object tempArgs: args){
             System.out.println("Args are : "+tempArgs);
+            if (tempArgs instanceof Account){
+                Account account = (Account) tempArgs;
+                account.setName("RRR");
+            }
+
         }
 
     }

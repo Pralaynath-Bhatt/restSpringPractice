@@ -1,6 +1,7 @@
 package com.spring.aop;
 
 import com.spring.aop.dao.AccountDAO;
+import com.spring.aop.entity.Account;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,13 +16,17 @@ public class AopApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(AccountDAO accountDAO){
 		return runner ->{
-			addAccountDemo(accountDAO);
+			Account account =  addAccountDemo(accountDAO);
 		};
 	}
 
-	private void addAccountDemo(AccountDAO accountDAO) {
+	private Account addAccountDemo(AccountDAO accountDAO) {
 		System.out.println(getClass() + " Inside Main");
-		accountDAO.addAccount(true);
+
+		Account account = new Account("pranjal","pranjalbhatt@gmail.com","12345678");
+		accountDAO.addAccount(account,true);
+		System.out.println(account.toString()+"   =======>>>in main");
+		return account;
 
 	}
 }
