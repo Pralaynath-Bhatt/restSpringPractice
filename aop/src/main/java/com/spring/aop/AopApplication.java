@@ -7,6 +7,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.util.List;
+
 @SpringBootApplication
 public class AopApplication {
 
@@ -16,8 +18,19 @@ public class AopApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(AccountDAO accountDAO){
 		return runner ->{
-			Account account =  addAccountDemo(accountDAO);
+			//Account account =  addAccountDemo(accountDAO);
+			myTHeThrowerrorPart(accountDAO);
 		};
+	}
+
+	private void myTHeThrowerrorPart(AccountDAO accountDAO) {
+		try{
+			boolean tripwire=true;
+			List<Account> accountList= accountDAO.findAccount(tripwire);
+		}
+		catch (Exception exp){
+			System.out.println("IN main Got expetion: "+exp);
+		}
 	}
 
 	private Account addAccountDemo(AccountDAO accountDAO) {
